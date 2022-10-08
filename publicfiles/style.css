@@ -31,3 +31,9 @@ h1{
     /* border:1vh dashed wheat; */
     border-left: 2vw solid blanchedalmond;
 }
+@media (max-width:500px) {
+    #homebuttons a button{
+        width: 200px;
+    }
+    
+}
