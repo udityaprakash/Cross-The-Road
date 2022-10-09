@@ -1,11 +1,12 @@
 #gamingscreen{
     height: 90vh;
-    width: 100vw;
+    width:100%;
     background-color: rgba(0, 0, 0, 0.47);
-    overflow: hidden scroll;
+    /* overflow-y:scroll; */
+    /* overflow-x: hidden; */
     display: flex;
-    flex-direction: column;
-     
+    flex-flow: column-reverse;
+    align-items: flex-end;  
 }
 #gamingscreen div{
     width: 100vw;
@@ -21,7 +22,7 @@ body{
     width: 100vw;
     background-color:black;
     display: flex;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     align-items: center;
     justify-content: center;
