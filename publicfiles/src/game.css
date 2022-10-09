@@ -2,17 +2,24 @@
     height: 90vh;
     width:100%;
     background-color: rgba(0, 0, 0, 0.47);
-    /* overflow-y:scroll; */
-    /* overflow-x: hidden; */
-    display: flex;
-    flex-flow: column-reverse;
-    align-items: flex-end;  
+    overflow:auto; 
 }
 #gamingscreen div{
     width: 100vw;
     height: 100px;
-    background-color: rgb(196, 34, 34);
+    color: white;
+    transition: all 0.5s ease-in-out;
 }
+#gamingscreen div:nth-child(even){
+    background-image: url("../Images/grass1.jpg");
+}
+#gamingscreen div:nth-child(odd){
+    background-image: url("../Images/road2.jpg");
+}
+
+#gamingscreen::-webkit-scrollbar {
+    display: none;
+  }
 body{
     margin: 0;
     padding:0;
