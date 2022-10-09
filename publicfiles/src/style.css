@@ -3,36 +3,47 @@ body {
 }
 
 h1 {
-  text-align: center;
   position: relative;
-  color: rgba(111, 107, 107, 0.804);
+  color: rgba(176, 171, 171, 0.804);
+
   left: 500px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 20vh 0vh 10vh 0;
   padding: 0;
   letter-spacing: 0.5vh;
-  font-size: 4.2em;
-  text-shadow: 4px 4px #2c6565bf;
+  font-size: 65px;
+  text-shadow: 3px 3px #419a9abf;
+  animation-name: text-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 /* --------------animations-------------- */
-.Vehicle {
-  height: 10vh;
-  width: 20vh;
-  position: absolute;
+@keyframes text-animation {
+  from {
+    color: #4f636e;
+  }
+  to {
+    color: #f0fff0;
+  }
 }
 
 /* -----------------character---------------------- */
 .character {
-  height: 20vh;
-  width: 25vh;
-  background-color: #2c6565bf;
+  height: 15vh;
+  width: 20vh;
+  background-color: #2c656586;
   padding: 5vh 5vh 5vh 5vh;
-  border-radius: 80px;
-  box-shadow: 2px 5px rgba(255, 255, 255, 0.231);
+  border-radius: 70px;
+  box-shadow: 2px 5px rgba(241, 235, 235, 0.45);
   left: 700px;
 }
 #character-card {
   display: flex;
   justify-content: center;
   gap: 30vh;
+}
+a:hover {
+  background-color: #81a8a8a1;
+  border-radius: 70px;
+  box-shadow: 2px 5px rgba(241, 235, 235, 0.45);
 }
