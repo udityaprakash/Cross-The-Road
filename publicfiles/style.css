@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Libre+Baskerville:wght@700&family=Pacifico&display=swap');
+body{
+    background-image: linear-gradient(40deg,rgb(0, 255, 110),rgb(0, 162, 255));
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    color: whitesmoke;
+    font-family:Georgia, serif;
+    letter-spacing: 1vw;
+    font-family: 'Courgette', cursive;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Pacifico', cursive;
+}
+#homebuttons{
+    margin: 20vh 42vw;
+    display: flex;
+    flex-direction: column;
+}
+#homebuttons a button{
+    padding: 2vh;
+    height: 10vh;
+    width: 20vw;
+    background-color: aqua;
+    border:0px;
+    font-size: 5vh;
+    font-family:Georgia, serif;
+    letter-spacing: 1vw;
+    transition: all 0.3s linear;
+}
+#homebuttons a button:hover{
+    /* border:1vh dashed wheat; */
+    border-left: 2vw solid blanchedalmond;
+}
+@media (max-width:500px) {
+    #homebuttons a button{
+        width: 200px;
+    }
+    
+}
