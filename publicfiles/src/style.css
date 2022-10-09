@@ -1,9 +1,7 @@
 body {
   background-color: #071111;
 }
-.heading {
-  display: flex;
-}
+
 h1 {
   text-align: center;
   position: relative;
@@ -20,72 +18,7 @@ h1 {
 .Vehicle {
   height: 10vh;
   width: 20vh;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
   position: absolute;
-}
-
-@keyframes V1 {
-  0% {
-    left: 10px;
-    top: 100px;
-  }
-  100% {
-    left: 1500px;
-    top: 100px;
-  }
-}
-
-#V1 {
-  left: 100px;
-  animation-name: V1;
-}
-@keyframes V2 {
-  0% {
-    left: 100px;
-    top: 100px;
-  }
-  50% {
-    left: px;
-    top: 100px;
-  }
-  75% {
-    left: 980px;
-    top: 100px;
-  }
-
-  100% {
-    left: 1600px;
-    top: 100px;
-  }
-}
-#V2 {
-  animation-name: V2;
-}
-@keyframes V3 {
-  0% {
-    left: 100px;
-    top: 100px;
-  }
-  50% {
-    left: px;
-    top: 100px;
-  }
-  75% {
-    left: 980px;
-    top: 100px;
-  }
-
-  100% {
-    left: 1600px;
-    top: 100px;
-  }
-}
-#V3 {
-  animation-name: V3;
-}
-#V4 {
-  animation-name: V4;
 }
 
 /* -----------------character---------------------- */
