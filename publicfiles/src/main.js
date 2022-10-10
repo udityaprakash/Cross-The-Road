@@ -1,10 +1,16 @@
 var gamescreen = document.getElementById("gamingscreen");
 var count = 0;
 var cars = [
-  "../Images/Car1.png",
-  "../Images/car2.png",
-  "../Images/car4.png",
-  "../Images/car5.png",
+  "cars1.png",
+  "car2.png",
+  "car3.png",
+  "car4.png",
+  "car5.png",
+  "car6.png",
+  "car7.png",
+  "car8.png",
+  "car9.png",
+  "car10.png"
 ];
 document.addEventListener("keypress", (event) => {
   switch (event.key) {
@@ -20,7 +26,7 @@ document.addEventListener("keypress", (event) => {
 });
 
 function cargenerator() {
-  var i = Math.floor(Math.random() * 4);
+  var i = Math.floor(Math.random() * 10);
   return cars[i];
 }
 for (let i = 0; i < 50; i++) {
@@ -30,9 +36,9 @@ for (let i = 0; i < 50; i++) {
   gamescreen.innerHTML +=
     "<div>" +
     count +
-    '<img class="carimages" src=' +
+    '<img class="carimages" src="../Images/' +
     car +
-    "></div><div></div>";
+    '"></div><div></div>';
 }
 gamescreen.scrollTop = gamescreen.scrollHeight;
 function forwardmovement() {
