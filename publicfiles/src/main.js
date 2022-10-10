@@ -1,5 +1,6 @@
 var gamescreen = document.getElementById("gamingscreen");
 var count = 0;
+var manindiv=50;
 var cars = [
   "cars1.png",
   "car2.png",
@@ -29,27 +30,35 @@ function cargenerator() {
   var i = Math.floor(Math.random() * 10);
   return cars[i];
 }
+function speedduration(){
+    let s = Math.random() * 5;
+    return s+1;
+}
 for (let i = 0; i < 50; i++) {
   count++;
   var car = cargenerator();
-  console.log(count, car);
-  gamescreen.innerHTML +=
-    "<div>" +
-    count +
-    '<img class="carimages" src="../Images/' +
-    car +
-    '"></div><div></div>';
+  gamescreen.innerHTML +='<div id="dive' + count + '"><img class="carimages" id="ima'+count+'" src="../Images/' + car + '"></div><div id="div'+ count +'"></div>';
+    var speed = document.getElementById("ima"+count);
+    speed.style.animationDuration = speedduration() + "s";
+
 }
 gamescreen.scrollTop = gamescreen.scrollHeight;
 function forwardmovement() {
   gamescreen.scrollTop -= 100;
-  console.log(gamescreen.scrollTop);
   if (gamescreen.scrollTop < 1000) {
     gamescreen.innerHTML = "Wow You have Won the game";
   }
+  addmenindiv();
 }
 function Backwardmovement() {
   if (gamescreen.scrollTop != gamescreen.scrollHeight)
     gamescreen.scrollTop += 100;
-  console.log(gamescreen.scrollTop);
 }
+// function addmenindiv(){
+//     var man = document.getElementById("dive"+manindiv);
+//     man.innerHTML+='<center><img src="../Images/man.png" height="80px"></center>';
+//     var manback=document.getElementById("dive"+(manindiv-1));
+//     manback.innerHTML='';
+//     manindiv--;
+// }
+// addmenindiv();
