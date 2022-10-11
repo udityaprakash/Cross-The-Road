@@ -6,16 +6,6 @@ var win = new Audio("../sounds/winning.mp3");
 var count = 0;
 var me=90;
 var flipdiv = true;
-function character1(){
-  window.location.pathname = "./publicfiles/src/game.html";
-  // var person = document.getElementById("character");
-  // console.log(person);
-  // person.innerHTML='<img src="../Images/char1.png" alt="charcter">';
-}
-function character2(){
-  window.location.pathname = "./publicfiles/src/game.html";
-}
-
 var cars = ["cars1.png","car2.png","car3.png","car4.png","car5.png","car6.png","car7.png","car8.png","car9.png","car10.png"];
 document.addEventListener("keypress", (event) => {
   if(consolebtn.style.display != 'none'){

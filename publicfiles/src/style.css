@@ -41,11 +41,11 @@ div{
   align-items:center;
   justify-content:space-evenly;
 }
-button{
+a{
   border-radius: 70px;
 
 }
-button:hover {
+a:hover {
   background-color: #81a8a8a1;
   box-shadow: 2px 5px rgba(241, 235, 235, 0.45);
 }
