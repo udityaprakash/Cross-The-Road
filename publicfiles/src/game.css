@@ -8,10 +8,14 @@
   width: 100vw;
   height: 100px;
   color: white;
+  /* display: inline-flexbox;
+  justify-content: center;
+  align-items: center; */
   transition: all 0.5s ease-in-out;
 }
 .carimages {
   height: 100px;
+  position: block;
   animation: movement linear infinite;
   /* animation-duration: 5s; */
 }

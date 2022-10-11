@@ -1,6 +1,7 @@
 var gamescreen = document.getElementById("gamingscreen");
 var count = 0;
 var manindiv=50;
+var flipdiv = true;
 var cars = [
   "cars1.png",
   "car2.png",
@@ -54,11 +55,27 @@ function Backwardmovement() {
   if (gamescreen.scrollTop != gamescreen.scrollHeight)
     gamescreen.scrollTop += 100;
 }
-// function addmenindiv(){
-//     var man = document.getElementById("dive"+manindiv);
-//     man.innerHTML+='<center><img src="../Images/man.png" height="80px"></center>';
-//     var manback=document.getElementById("dive"+(manindiv-1));
-//     manback.innerHTML='';
-//     manindiv--;
-// }
-// addmenindiv();
+function addmenindiv(){
+  var mangrass = document.getElementById("div"+manindiv);
+  var manroad = document.getElementById("dive"+manindiv);
+  var dinoimage = document.getElementById("dino");
+  if(flipdiv){
+    if(manindiv!=50){
+      dinoimage.innerHTML='';
+    }
+    mangrass.innerHTML+='<center><img id="dino" src="../Images/char1.png" height="80px"></center>';
+    // var manback=document.getElementById("dive"+(manindiv-1));
+    // manback.innerHTML='';
+    flipdiv=false;
+    
+  }else{
+    dinoimage.style.display='none';
+    manroad.innerHTML+='<center><img id="dino" src="../Images/char1.png" height="80px"></center>';
+    dinoimage.style.position='absolute';
+    dinoimage.style.top='-100px';
+    
+    manindiv--;
+    flipdiv=true;
+  }
+}
+addmenindiv();
