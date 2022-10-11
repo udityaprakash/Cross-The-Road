@@ -3,6 +3,9 @@ var consolebtn = document.getElementById("console");
 var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
+var characterposition = document.querySelector("#character");
+var charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
+var y=charpos;
 var count = 0;
 var me=90;
 var flipdiv = true;
@@ -16,6 +19,12 @@ document.addEventListener("keypress", (event) => {
       case "s":
         Backwardmovement();
         break;
+      case "a":
+          leftmovement();
+          break; 
+      case "d":
+            rightmovement();
+            break;
       default:
         break;
     }
@@ -55,6 +64,7 @@ function forwardmovement() {
     win.play();
     gamescreen.innerHTML = '<div id="won">You Won<button id="retrybtn" onclick="relod()">Play Again</button></div>';
     consolebtn.style.display='none';
+    characterposition.style.display='none';
     gamescreen.style.height="100vh";
     clearInterval(le);
   }
@@ -91,6 +101,7 @@ var le = setInterval(()=>{
     carpos=parseInt(window.getComputedStyle(carposition,null).getPropertyValue('left'));
     characterposition = document.querySelector("#character");
     charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
+    y=charpos;
     let gap = carpos - charpos;
     console.log(count,me);
     if(gap<70 && gap > -150){
@@ -98,7 +109,22 @@ var le = setInterval(()=>{
       crash.play();
       gamescreen.innerHTML = '<div id="won">Game Over<button id="retrybtn" onclick="relod()">Retry</button></div>';
       consolebtn.style.display='none';
+      characterposition.style.display='none';
       gamescreen.style.height="100vh";
     }
   }
 },100);
+function leftmovement(){
+  if(charpos>100 && charpos<1000){
+    y=y-10;
+    characterposition.style.left=y+"px";
+  }
+
+}
+function rightmovement(){
+  if(charpos>100 && charpos<1000){
+    y=y+10;
+    characterposition.style.left=y+"px";
+  }
+
+}
