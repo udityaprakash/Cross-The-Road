@@ -23,8 +23,9 @@
 }
 .carimages {
   height: 100px;
-  /* position: block; */
+  position: relative;
   animation: movement linear infinite;
+
   /* animation-duration: 5s; */
 }
 #gamingscreen div:nth-child(even) {
@@ -62,11 +63,30 @@ body {
 }
 @keyframes movement{
     0%{
-        transform: translateX(120vw);
+        /* transform: translateX(120vw); */
+        left: 1180px;
     }
     100%{
-        transform: translateX(-40vw);
+        /* transform: translateX(-40vw); */
+        left:-100px;
     }
+}
+#retrybtn{
+  margin-left: 5vw;
+  height: 70px;
+  width: 150px;
+  min-width: max-content;
+  background-color: rgba(173, 173, 173, 0.831);
+  border: 0px;
+  border-radius: 20px;
+  color: rgb(0, 132, 255);
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#retrybtn:hover{
+  background-color: rgba(173, 173, 173, 0.95);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.7)  ;
 }
 #character{
   display: block;
