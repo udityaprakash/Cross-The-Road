@@ -99,7 +99,6 @@ var le = setInterval(()=>{
       gamescreen.innerHTML = '<div id="won">Game Over<button id="retrybtn" onclick="relod()">Retry</button></div>';
       consolebtn.style.display='none';
       gamescreen.style.height="100vh";
-
     }
   }
 },100);
