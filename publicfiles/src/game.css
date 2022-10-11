@@ -13,9 +13,17 @@
   align-items: center; */
   transition: all 0.5s ease-in-out;
 }
+#won{
+  position: relative;
+  top:50vh;
+  display: flex;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+}
 .carimages {
   height: 100px;
-  position: block;
+  /* position: block; */
   animation: movement linear infinite;
   /* animation-duration: 5s; */
 }
@@ -59,4 +67,13 @@ body {
     100%{
         transform: translateX(-40vw);
     }
+}
+#character{
+  display: block;
+  position: absolute;
+  bottom:10vh;
+  left: 45vw;
+}
+#character img{
+  height: 90px;
 }
