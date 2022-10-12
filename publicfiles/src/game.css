@@ -58,6 +58,9 @@ body {
   font-size: medium;
   letter-spacing: 0.2vw;
   background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @keyframes movement{
     0%{
@@ -92,4 +95,24 @@ body {
 }
 #character img{
   height: 90px;
+}
+@media (max-width:500px) {
+  #console{
+    height: 0px;
+  }
+  #console button {
+    height: 15vh;
+    border-radius: 10px;
+    border:0px;
+  }
+  @keyframes movement{
+    0%{
+        left: 110vw;
+    }
+    100%{
+        left:-50vw;
+    }
+}
+
+  
 }
