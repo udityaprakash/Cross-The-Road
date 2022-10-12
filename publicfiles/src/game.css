@@ -41,6 +41,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 #console {
   height: 10vh;
@@ -55,6 +56,8 @@ body {
 #console button {
   height: 6vh;
   width: 10vw;
+  margin: 0 2vw;
+  cursor: pointer;
   min-width: max-content;
   font-family: Georgia, serif;
   font-size: medium;
@@ -63,12 +66,10 @@ body {
 }
 @keyframes movement{
     0%{
-        /* transform: translateX(120vw); */
-        left: 1180px;
+        left: 118vw;
     }
     100%{
-        /* transform: translateX(-40vw); */
-        left:-100px;
+        left:-10vw;
     }
 }
 #retrybtn{

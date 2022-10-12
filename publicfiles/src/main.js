@@ -3,6 +3,8 @@ var consolebtn = document.getElementById("console");
 var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
+var maxwidth = window.innerWidth;
+console.log
 var characterposition = document.querySelector("#character");
 var charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
 var y=charpos;
@@ -28,19 +30,16 @@ document.addEventListener("keypress", (event) => {
       default:
         break;
     }
-
   }
 });
 document.querySelector('#gamingscreen').addEventListener('wheel', (e)=>{
   e.preventDefault();
   e.stopPropagation();
   return false;
-
 }, {passive: false});
 function welcome(){
   begin.play();
 }
-
 function cargenerator() {
   var i = Math.floor(Math.random() * 10);
   return cars[i];
@@ -96,14 +95,12 @@ function relod(){
   welcome();
 }
 var le = setInterval(()=>{
+  charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
+  y=charpos;
   if(me!=90){
     carposition = document.querySelector("#ima"+me);
-    carpos=parseInt(window.getComputedStyle(carposition,null).getPropertyValue('left'));
-    characterposition = document.querySelector("#character");
-    charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
-    y=charpos;
+    carpos = parseInt(window.getComputedStyle(carposition,null).getPropertyValue('left'));
     let gap = carpos - charpos;
-    console.log(count,me);
     if(gap<70 && gap > -150){
       clearInterval(le);
       crash.play();
@@ -115,16 +112,14 @@ var le = setInterval(()=>{
   }
 },100);
 function leftmovement(){
-  if(charpos>100 && charpos<1000){
+  if(charpos>50 && charpos < maxwidth){
     y=y-10;
     characterposition.style.left=y+"px";
   }
-
 }
 function rightmovement(){
-  if(charpos>100 && charpos<1000){
+  if(charpos>30 && charpos< (maxwidth-120)){
     y=y+10;
     characterposition.style.left=y+"px";
   }
-
 }
