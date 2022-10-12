@@ -13,9 +13,9 @@
   align-items: center; */
   transition: all 0.5s ease-in-out;
 }
-#won{
+#won {
   position: relative;
-  top:50vh;
+  top: 50vh;
   display: flex;
   font-size: 3rem;
   justify-content: center;
@@ -23,8 +23,9 @@
 }
 .carimages {
   height: 100px;
-  /* position: block; */
+  position: relative;
   animation: movement linear infinite;
+
   /* animation-duration: 5s; */
 }
 #gamingscreen div:nth-child(even) {
@@ -40,6 +41,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 #console {
   height: 10vh;
@@ -54,26 +56,45 @@ body {
 #console button {
   height: 6vh;
   width: 10vw;
+  margin: 0 2vw;
+  cursor: pointer;
   min-width: max-content;
   font-family: Georgia, serif;
   font-size: medium;
   letter-spacing: 0.2vw;
   background-color: aquamarine;
 }
-@keyframes movement{
-    0%{
-        transform: translateX(120vw);
-    }
-    100%{
-        transform: translateX(-40vw);
-    }
+@keyframes movement {
+  0% {
+    left: 118vw;
+  }
+  100% {
+    left: -10vw;
+  }
 }
-#character{
+#retrybtn {
+  margin-left: 5vw;
+  height: 70px;
+  width: 150px;
+  min-width: max-content;
+  background-color: rgba(173, 173, 173, 0.831);
+  border: 0px;
+  border-radius: 20px;
+  color: rgb(0, 132, 255);
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#retrybtn:hover {
+  background-color: rgba(173, 173, 173, 0.95);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.7);
+}
+#character {
   display: block;
   position: absolute;
-  bottom:10vh;
+  bottom: 10vh;
   left: 45vw;
 }
-#character img{
+#character img {
   height: 90px;
 }
