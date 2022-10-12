@@ -96,6 +96,16 @@ body {
 #character img{
   height: 90px;
 }
+#scorecard{
+  height: 40px;
+  width: 150px;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  margin: 20px;
+
+  background-color: aqua;
+}
 @media (max-width:500px) {
   #console{
     height: 0px;
@@ -113,6 +123,4 @@ body {
         left:-50vw;
     }
 }
-
-  
 }
