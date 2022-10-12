@@ -4,7 +4,6 @@ var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
 var maxwidth = window.innerWidth;
-console.log
 var characterposition = document.querySelector("#character");
 var charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
 var y=charpos;
@@ -92,7 +91,6 @@ function Backwardmovement() {
 }
 function relod(){
   window.location.reload();
-  welcome();
 }
 var le = setInterval(()=>{
   charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));

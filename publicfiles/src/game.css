@@ -8,9 +8,6 @@
   width: 100vw;
   height: 100px;
   color: white;
-  /* display: inline-flexbox;
-  justify-content: center;
-  align-items: center; */
   transition: all 0.5s ease-in-out;
 }
 #won{
@@ -25,8 +22,6 @@
   height: 100px;
   position: relative;
   animation: movement linear infinite;
-
-  /* animation-duration: 5s; */
 }
 #gamingscreen div:nth-child(even) {
   background-image: url("../Images/grass1.jpg");
