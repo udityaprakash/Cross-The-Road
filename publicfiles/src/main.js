@@ -7,6 +7,8 @@ var maxwidth = window.innerWidth;
 var characterposition = document.querySelector("#character");
 var charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
 var y=charpos;
+var scorediv=document.querySelector("#scorecard span");
+var score=0;
 var count = 0;
 var me=90;
 var flipdiv = true;
@@ -47,7 +49,7 @@ function speedduration(){
     let s = Math.random() * 3;
     return s+1;
 }
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 55; i++) {
   count++;
   var car = cargenerator();
   gamescreen.innerHTML +='<div id="dive' + count + '"><img class="carimages" id="ima'+count+'" src="../Images/' + car + '"></div><div id="div'+ count +'"></div>';
@@ -58,17 +60,20 @@ for (let i = 0; i < 50; i++) {
 gamescreen.scrollTop = gamescreen.scrollHeight;
 function forwardmovement() {
   gamescreen.scrollTop -= 100;
-  if (gamescreen.scrollTop < 1000) {
+  if (score >= 500) {
     win.play();
     gamescreen.innerHTML = '<div id="won">You Won<button id="retrybtn" onclick="relod()">Play Again</button></div>';
     consolebtn.style.display='none';
     characterposition.style.display='none';
     gamescreen.style.height="100vh";
+    
     clearInterval(le);
   }
   if(flipdiv){
     me = count;
     count--;
+    score=550-(10*count);
+    scorediv.innerHTML=" " +score+"";
     flipdiv = false;
     
   }else{
@@ -85,6 +90,8 @@ function Backwardmovement() {
     }else{
       me = 90;
       count++;
+      score=550-(10*count);
+      scorediv.innerHTML=" " +score+"";
       flipdiv = true;
     }
   }
