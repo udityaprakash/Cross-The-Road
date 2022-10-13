@@ -140,7 +140,7 @@ var le = setInterval(() => {
       window.getComputedStyle(carposition, null).getPropertyValue("left")
     );
     let gap = carpos - charpos;
-    if (gap < 70 && gap > -150) {
+    if (gap < 90 && gap > -150) {
       clearInterval(le);
       crash.play();
       gamescreen.innerHTML =
