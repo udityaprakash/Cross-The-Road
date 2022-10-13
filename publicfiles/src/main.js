@@ -66,7 +66,6 @@ function forwardmovement() {
     consolebtn.style.display='none';
     characterposition.style.display='none';
     gamescreen.style.height="100vh";
-    
     clearInterval(le);
   }
   if(flipdiv){
@@ -82,7 +81,7 @@ function forwardmovement() {
   }
 }
 function Backwardmovement() {
-  if (gamescreen.scrollTop != gamescreen.scrollHeight){
+  if (score != 0){
     gamescreen.scrollTop += 100;
     if(flipdiv){
       me = count;
@@ -115,7 +114,7 @@ var le = setInterval(()=>{
       gamescreen.style.height="100vh";
     }
   }
-},100);
+},50);
 function leftmovement(){
   if(charpos>50 && charpos < maxwidth){
     y=y-10;
