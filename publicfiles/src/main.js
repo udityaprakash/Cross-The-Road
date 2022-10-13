@@ -61,10 +61,10 @@ const cargenerator = () => {
   var i = Math.floor(Math.random() * 10);
   return cars[i];
 };
-const speedduration = () => {
+function speedduration() {
   let s = Math.random() * 3;
   return s + 1;
-};
+}
 for (let i = 0; i < 50; i++) {
   count++;
   var car = cargenerator();
@@ -84,7 +84,7 @@ for (let i = 0; i < 50; i++) {
 gamescreen.scrollTop = gamescreen.scrollHeight;
 forwardmovement = () => {
   gamescreen.scrollTop -= 100;
-  if (gamescreen.scrollTop < 1000) {
+  if (score >= 500) {
     win.play();
     gamescreen.innerHTML =
       '<div id="won">You Won<button id="retrybtn" onclick="relod()">Play Again</button></div>';
@@ -96,13 +96,15 @@ forwardmovement = () => {
   if (flipdiv) {
     me = count;
     count--;
+    score = 550 - 10 * count;
+    scorediv.innerHTML = " " + score + "";
     flipdiv = false;
   } else {
     me = 90;
     flipdiv = true;
   }
 };
-const Backwardmovement = () => {
+function Backwardmovement() {
   if (gamescreen.scrollTop != gamescreen.scrollHeight) {
     gamescreen.scrollTop += 100;
     if (flipdiv) {
@@ -111,10 +113,12 @@ const Backwardmovement = () => {
     } else {
       me = 90;
       count++;
+      score = 550 - 10 * count;
+      scorediv.innerHTML = " " + score + "";
       flipdiv = true;
     }
   }
-};
+}
 const relod = () => {
   window.location.reload();
   welcome();
@@ -126,7 +130,7 @@ var le = setInterval(() => {
   y = charpos;
   if (me != 90) {
     carposition = document.querySelector("#ima" + me);
-    const carpos = parseInt(
+    carpos = parseInt(
       window.getComputedStyle(carposition, null).getPropertyValue("left")
     );
     let gap = carpos - charpos;
@@ -141,12 +145,12 @@ var le = setInterval(() => {
     }
   }
 }, 100);
-const leftmovement = () => {
+function leftmovement() {
   if (charpos > 50 && charpos < maxwidth) {
     y = y - 10;
     characterposition.style.left = y + "px";
   }
-};
+}
 const rightmovement = () => {
   if (charpos > 30 && charpos < maxwidth - 120) {
     y = y + 10;
