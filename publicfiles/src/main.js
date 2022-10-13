@@ -125,5 +125,6 @@ function rightmovement(){
   if(charpos>30 && charpos< (maxwidth-120)){
     y=y+10;
     characterposition.style.left=y+"px";
+    
   }
 }
