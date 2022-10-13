@@ -54,17 +54,17 @@ document.querySelector("#gamingscreen").addEventListener(
   },
   { passive: false }
 );
-function welcome() {
+const welcome = () => {
   begin.play();
-}
-function cargenerator() {
+};
+const cargenerator = () => {
   var i = Math.floor(Math.random() * 10);
   return cars[i];
-}
-function speedduration() {
+};
+const speedduration = () => {
   let s = Math.random() * 3;
   return s + 1;
-}
+};
 for (let i = 0; i < 50; i++) {
   count++;
   var car = cargenerator();
@@ -82,7 +82,7 @@ for (let i = 0; i < 50; i++) {
   speed.style.animationDuration = speedduration() + "s";
 }
 gamescreen.scrollTop = gamescreen.scrollHeight;
-function forwardmovement() {
+forwardmovement = () => {
   gamescreen.scrollTop -= 100;
   if (gamescreen.scrollTop < 1000) {
     win.play();
@@ -101,8 +101,8 @@ function forwardmovement() {
     me = 90;
     flipdiv = true;
   }
-}
-function Backwardmovement() {
+};
+const Backwardmovement = () => {
   if (gamescreen.scrollTop != gamescreen.scrollHeight) {
     gamescreen.scrollTop += 100;
     if (flipdiv) {
@@ -114,11 +114,11 @@ function Backwardmovement() {
       flipdiv = true;
     }
   }
-}
-function relod() {
+};
+const relod = () => {
   window.location.reload();
   welcome();
-}
+};
 var le = setInterval(() => {
   charpos = parseInt(
     window.getComputedStyle(characterposition, null).getPropertyValue("left")
@@ -126,7 +126,7 @@ var le = setInterval(() => {
   y = charpos;
   if (me != 90) {
     carposition = document.querySelector("#ima" + me);
-    carpos = parseInt(
+    const carpos = parseInt(
       window.getComputedStyle(carposition, null).getPropertyValue("left")
     );
     let gap = carpos - charpos;
@@ -141,15 +141,15 @@ var le = setInterval(() => {
     }
   }
 }, 100);
-function leftmovement() {
+const leftmovement = () => {
   if (charpos > 50 && charpos < maxwidth) {
     y = y - 10;
     characterposition.style.left = y + "px";
   }
-}
-function rightmovement() {
+};
+const rightmovement = () => {
   if (charpos > 30 && charpos < maxwidth - 120) {
     y = y + 10;
     characterposition.style.left = y + "px";
   }
-}
+};
