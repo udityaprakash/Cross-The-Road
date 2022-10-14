@@ -4,16 +4,17 @@ var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
 var maxwidth = window.innerWidth;
-var characterposition = document.querySelector("#character");
+var characterposition = document.getElementById("character");
 var charpos = parseInt(
   window.getComputedStyle(characterposition, null).getPropertyValue("left")
 );
 var y = charpos;
+var chary = parseInt(
+  window.getComputedStyle(characterposition, null).getPropertyValue("bottom")
+);
 var scorediv = document.querySelector("#scorecard span");
-var progressdiv = document.querySelector("#progress-bar span");
 var score = 0;
 var count = 0;
-var progress = 50;
 var me = 90;
 var flipdiv = true;
 var cars = [
@@ -66,7 +67,6 @@ function cargenerator() {
 }
 function speedduration() {
   let s = Math.random() * 3;
-
   return s + 1;
 }
 for (let i = 0; i < 55; i++) {
@@ -87,8 +87,15 @@ for (let i = 0; i < 55; i++) {
 }
 gamescreen.scrollTop = gamescreen.scrollHeight;
 function forwardmovement() {
-  gamescreen.scrollTop -= 100;
-  if (score >= 500) {
+  chary = parseInt(
+    window.getComputedStyle(characterposition, null).getPropertyValue("bottom")
+  );
+  if (chary >= 260) {
+    gamescreen.scrollTop -= 100;
+  } else {
+    characterposition.style.bottom = chary + 100 + "px";
+  }
+  if (score >= 495) {
     win.play();
     gamescreen.innerHTML =
       '<div id="won">You Won<button id="retrybtn" onclick="relod()">Play Again</button></div>';
@@ -97,32 +104,37 @@ function forwardmovement() {
     gamescreen.style.height = "100vh";
     clearInterval(le);
   }
+  score += 5;
+  scorediv.innerHTML = " " + score + "";
   if (flipdiv) {
     me = count;
-    count--;
-    progress--;
-    score = 550 - 10 * count;
-    scorediv.innerHTML = " " + score + "";
-    progressdiv.innerHTML = progress + " ";
     flipdiv = false;
   } else {
+    count--;
     me = 90;
     flipdiv = true;
   }
 }
 function Backwardmovement() {
   if (score != 0) {
-    gamescreen.scrollTop += 100;
+    if (score <= 10) {
+      chary = parseInt(
+        window
+          .getComputedStyle(characterposition, null)
+          .getPropertyValue("bottom")
+      );
+      characterposition.style.bottom = chary - 100 + "px";
+    } else {
+      gamescreen.scrollTop += 100;
+    }
+    score -= 5;
+    scorediv.innerHTML = " " + score + "";
     if (flipdiv) {
+      count++;
       me = count;
       flipdiv = false;
     } else {
       me = 90;
-      count++;
-      progress++;
-      progressdiv.innerHTML = progress + " ";
-      score = 550 - 10 * count;
-      scorediv.innerHTML = " " + score + "";
       flipdiv = true;
     }
   }
@@ -135,23 +147,14 @@ var le = setInterval(() => {
     window.getComputedStyle(characterposition, null).getPropertyValue("left")
   );
   y = charpos;
+  console.log(me, count);
   if (me != 90) {
     carposition = document.querySelector("#ima" + me);
     carpos = parseInt(
       window.getComputedStyle(carposition, null).getPropertyValue("left")
     );
     let gap = carpos - charpos;
-    var collisionspeed = speedduration();
-    if (gap < 90 && gap > -150 && collisionspeed > 1.5) {
-      clearInterval(le);
-      crash.play();
-      gamescreen.innerHTML =
-        '<div id="won">Game Over<button id="retrybtn" onclick="relod()">Retry</button></div>';
-      consolebtn.style.display = "none";
-      characterposition.style.display = "none";
-      gamescreen.style.height = "100vh";
-    }
-    if (collisionspeed < 1.5 && gap < 140 && gap > -170) {
+    if (gap < 70 && gap > -150) {
       clearInterval(le);
       crash.play();
       gamescreen.innerHTML =
