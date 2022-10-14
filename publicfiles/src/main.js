@@ -66,6 +66,7 @@ function cargenerator() {
 }
 function speedduration() {
   let s = Math.random() * 3;
+
   return s + 1;
 }
 for (let i = 0; i < 55; i++) {
@@ -140,7 +141,17 @@ var le = setInterval(() => {
       window.getComputedStyle(carposition, null).getPropertyValue("left")
     );
     let gap = carpos - charpos;
-    if (gap < 90 && gap > -150) {
+    var collisionspeed = speedduration();
+    if (gap < 90 && gap > -150 && collisionspeed > 1.5) {
+      clearInterval(le);
+      crash.play();
+      gamescreen.innerHTML =
+        '<div id="won">Game Over<button id="retrybtn" onclick="relod()">Retry</button></div>';
+      consolebtn.style.display = "none";
+      characterposition.style.display = "none";
+      gamescreen.style.height = "100vh";
+    }
+    if (collisionspeed < 1.5 && gap < 140 && gap > -170) {
       clearInterval(le);
       crash.play();
       gamescreen.innerHTML =
