@@ -4,9 +4,10 @@ var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
 var maxwidth = window.innerWidth;
-var characterposition = document.querySelector("#character");
+var characterposition = document.getElementById("character");
 var charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
 var y=charpos;
+var chary = parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('bottom'));
 var scorediv=document.querySelector("#scorecard span");
 var score=0;
 var count = 0;
@@ -59,8 +60,13 @@ for (let i = 0; i < 55; i++) {
 }
 gamescreen.scrollTop = gamescreen.scrollHeight;
 function forwardmovement() {
+  chary = parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('bottom'));
+  if(chary>=260){
   gamescreen.scrollTop -= 100;
-  if (score >= 500) {
+  }else{
+    characterposition.style.bottom=(chary+100)+"px";
+  }
+  if (score >= 495) {
     win.play();
     gamescreen.innerHTML = '<div id="won">You Won<button id="retrybtn" onclick="relod()">Play Again</button></div>';
     consolebtn.style.display='none';
@@ -68,29 +74,34 @@ function forwardmovement() {
     gamescreen.style.height="100vh";
     clearInterval(le);
   }
+  score+=5;
+  scorediv.innerHTML=" " +score+"";
   if(flipdiv){
     me = count;
-    count--;
-    score=550-(10*count);
-    scorediv.innerHTML=" " +score+"";
     flipdiv = false;
     
   }else{
+    count--;
     me = 90;
     flipdiv = true;
   }
 }
 function Backwardmovement() {
-  if (score != 0){
+  if (score != 0){ 
+    if(score<=10){
+      chary = parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('bottom'));
+      characterposition.style.bottom=(chary-100)+"px";
+    }else{
     gamescreen.scrollTop += 100;
+    }
+    score-=5;
+    scorediv.innerHTML=" " +score+"";
     if(flipdiv){
+      count++;
       me = count;
       flipdiv = false;
     }else{
       me = 90;
-      count++;
-      score=550-(10*count);
-      scorediv.innerHTML=" " +score+"";
       flipdiv = true;
     }
   }
@@ -101,6 +112,7 @@ function relod(){
 var le = setInterval(()=>{
   charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
   y=charpos;
+  console.log(me , count);
   if(me!=90){
     carposition = document.querySelector("#ima"+me);
     carpos = parseInt(window.getComputedStyle(carposition,null).getPropertyValue('left'));
@@ -124,6 +136,6 @@ function leftmovement(){
 function rightmovement(){
   if(charpos>30 && charpos< (maxwidth-120)){
     y=y+10;
-    characterposition.style.left=y+"px";
+    characterposition.style.left=y+"px";   
   }
 }
