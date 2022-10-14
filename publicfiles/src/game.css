@@ -1,5 +1,5 @@
 #gamingscreen {
-  height: 90vh;
+  height: calc(100vh - 60px);
   width: 100%;
   background-color: rgba(0, 0, 0, 0.47);
   overflow: auto;
@@ -39,7 +39,7 @@ body {
   overflow: hidden;
 }
 #console {
-  height: 10vh;
+  height: 60px;
   width: 100vw;
   background-color: black;
   display: flex;
@@ -90,7 +90,7 @@ body {
 #character{
   display: block;
   position: absolute;
-  bottom:10vh;
+  bottom:60px;
   left: 45vw;
 }
 #character img{
