@@ -144,16 +144,43 @@ body {
   }
 }
 #dropdown {
-  height: 2rem;
-  min-width: max-content;
+  border: none;
+  cursor: pointer;
+  bottom: 600px;
+  left: 1200px;
   position: absolute;
-  border-radius: 10px;
-  top: 0;
-  margin: 20px;
-  padding: 0.5rem 1rem;
-  font-weight: 800;
-  font-size: 1.5rem;
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
+}
+.dropbtn {
   background-color: rgba(135, 157, 146, 0.559);
+  color: rgb(16, 15, 15);
+  padding: 14px 10px;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+}
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #1d313e54;
+  color: aliceblue;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #1d313e54;
+}
+.dropdown-content a {
+  color: aliceblue;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #1d313e54;
+}
+.show {
+  display: block;
 }

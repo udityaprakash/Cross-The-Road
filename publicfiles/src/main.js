@@ -3,6 +3,7 @@ var consolebtn = document.getElementById("console");
 var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
+
 var maxwidth = window.innerWidth;
 var characterposition = document.getElementById("character");
 var charpos = parseInt(
@@ -176,4 +177,28 @@ function rightmovement() {
     y = y + 10;
     characterposition.style.left = y + "px";
   }
+}
+// --------------Dropdown-------------------
+function mycharacter() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+gamescreen.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+var char = ["char1.png", "char2.png"];
+
+var charelement = document.getElementById("char");
+function mychoice(choice) {
+  charelement.src = '"../Images/' + char[choice] + '"';
+
+  // charelement.setAttribute("src", '"../Images/' + char[choice] + '"');
 }
