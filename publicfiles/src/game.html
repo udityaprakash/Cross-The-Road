@@ -17,16 +17,20 @@
         <button onclick="Backwardmovement()">Backward</button>
         <button onclick="rightmovement()">Right</button>
       </div>
-      <div id="character"><img src="../Images/char1.png" alt="charcter" /></div>
+      <div id="character">
+        <img src="../Images/char1.png" alt="charcter" id="char" />
+      </div>
     </div>
     <div id="scorecard">Score:<span> 0</span></div>
     <div id="progress-bar"><span>50 </span>Roads to win</div>
 
     <div id="dropdown">
-      <button onclick="mycharacter()" class="dropbtn">choose</button>
+      <button onclick="mycharacter()" class="dropbtn">
+        Choose your character
+      </button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#">Zack</a>
-        <a href="#">Wheezie</a>
+        <a href="#" onclick="mychoice(0)">Zack</a>
+        <a href="#" onclick="mychoice(1)">Wheezie</a>
       </div>
     </div>
     <script src="./main.js"></script>
