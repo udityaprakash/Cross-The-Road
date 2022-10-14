@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./game.css" />
   </head>
   <body onload="welcome()">
-    <div>
+    <div id="screen">
       <div id="gamingscreen"></div>
       <div id="console">
         <button onclick="leftmovement()">Left</button>
@@ -21,16 +21,13 @@
     </div>
     <div id="scorecard">Score:<span> 0</span></div>
     <div id="progress-bar"><span>50 </span>Roads to win</div>
+
     <div id="dropdown">
-      <a id="character">Choose your character</a>
-        <div id="character-choice">
-          <button>
-            <img src="../Images/char1.png" alt="character1">
-          </button>
-          <button>
-            <img src="../Images/char2.png" alt="character2">
-          </button>
-     
+      <button onclick="mycharacter()" class="dropbtn">choose</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#">Zack</a>
+        <a href="#">Wheezie</a>
+      </div>
     </div>
     <script src="./main.js"></script>
   </body>
