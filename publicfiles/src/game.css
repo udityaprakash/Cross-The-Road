@@ -143,3 +143,17 @@ body {
     }
   }
 }
+#dropdown {
+  height: 2rem;
+  min-width: max-content;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  margin: 20px;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgba(135, 157, 146, 0.559);
+}
