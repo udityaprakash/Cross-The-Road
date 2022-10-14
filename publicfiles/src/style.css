@@ -1,51 +1,99 @@
 body {
-  background-color: #071111;
+  background-color: #181818;
 }
-
+ol{
+  margin: 5% auto ;
+  font-size: 2rem;
+  padding: 3rem;
+  height: 40vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+ol li{
+  color: #f0fff0;
+  line-height: 4rem;
+}
+#backbtn{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 3rem;
+  width: 9rem;
+}
 h1 {
   color: rgba(176, 171, 171);
   text-align: center;
+  width: 60vw;
   margin: auto;
-  text-decoration: underline;
   letter-spacing: 0.5vw;
   font-size: 4rem;
-  text-shadow: 2px 2px 4px #419a9abf;
+  text-shadow: 0px 0px 10px #bbbbbbbf, 0px 0px 5px #3f70dabf;
   animation: text-animation 4s linear infinite;
 }
 /* --------------animations-------------- */
 @keyframes text-animation {
   0%{
+    transform: rotateY('180deg');
     color: #4f636e;
+    transform:translateX(0px);
+    opacity: 0;
+  }
+  2%{
+    opacity: 1;
+  }
+  5%{
+    opacity: 0;
+  }
+  7%{
+    opacity: 1;
+  }
+  25%{
+    transform:translateX(10px);
   }
   50%{
+    transform:translateX(0px);
     color: #f0fff0;
   }
+  75%{
+    transform:translateX(-10px);
+  }
   100%{
+    transform:translateX(0px);
     color: #4f636e;
   }
 }
 
-/* -----------------character---------------------- */
-.character {
-  height: 15vh;
-  width: 20vh;
-  background-color: #2c656586;
-  padding: 5vh;
-  border-radius: 70px;
-  box-shadow: 2px 5px rgba(241, 235, 235, 0.45);
-  left: 700px;
-}
 div{
   display: flex;
-  margin-top: 20%;
+  /* background-color: #4f636e; */
+  flex-direction: column;
+  margin-top:20vh;
   align-items:center;
   justify-content:space-evenly;
 }
 a{
-  border-radius: 70px;
-
+  font-size: 3rem;
+  color: #f0fff0;
+  padding: 1rem;
+  text-decoration: none;
+  box-shadow: 2px 5px 4px rgb(123, 142, 123),-2px 5px 4px rgb(123, 123, 123);
+  border-radius: 16% 0% 16% 0% / 100% 0% 100% 0% ;
+  width: 350px;
+  text-align: center;
+  text-transform: uppercase;
 }
-a:hover {
-  background-color: #81a8a8a1;
-  box-shadow: 2px 5px rgba(241, 235, 235, 0.45);
+a:hover ,a::after{
+  background-color:#343434b7 ;
+  /* box-shadow: 2px 0px rgba(241, 235, 235, 0.45); */
+  scale: 1.2;
+  animation: swa 1s ease-out;
+}
+@keyframes swa {
+  0%{
+    box-shadow: 2px 5px 4px rgb(123, 142, 123),-2px 5px 4px rgb(123, 123, 123);
+  }
+  100%{
+    box-shadow: 200vw 5px 4px rgb(128, 139, 128),-200vw 5px 4px rgb(87, 87, 87);
+  } 
 }
