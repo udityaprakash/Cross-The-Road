@@ -14,6 +14,7 @@ var y = charpos;
 var chary = parseInt(
   window.getComputedStyle(characterposition, null).getPropertyValue("bottom")
 );
+var chardiv = document.getElementById("dropdown");
 var scorediv = document.querySelector("#scorecard span");
 var score = 0;
 var count = 0;
@@ -102,6 +103,7 @@ function forwardmovement() {
     gamescreen.innerHTML =
       '<div id="won">You Won<button id="retrybtn" onclick="relod()">Play Again</button></div>';
     consolebtn.style.display = "none";
+    chardiv.style.display = "none";
     characterposition.style.display = "none";
     gamescreen.style.height = "100vh";
     clearInterval(le);
@@ -163,6 +165,7 @@ var le = setInterval(() => {
       gamescreen.innerHTML =
         '<div id="won">Game Over<button id="retrybtn" onclick="relod()">Retry</button></div>';
       consolebtn.style.display = "none";
+      chardiv.style.display = "none";
       characterposition.style.display = "none";
       gamescreen.style.height = "100vh";
     }
@@ -201,6 +204,5 @@ var char = ["char1.png", "char2.png"];
 var charelement = document.getElementById("char");
 function mychoice(choice) {
   charelement.setAttribute("src", "../Images/" + char[choice]);
-
-  // charelement.setAttribute("src", '"../Images/' + char[choice] + '"');
+  document.getElementById("myDropdown").classList.toggle("show");
 }
