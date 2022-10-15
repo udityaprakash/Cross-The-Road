@@ -3,7 +3,8 @@ var consolebtn = document.getElementById("console");
 var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
-
+var roadleft = document.querySelector("#progress-bar span");
+var progress = 50;
 var maxwidth = window.innerWidth;
 var characterposition = document.getElementById("character");
 var charpos = parseInt(
@@ -13,6 +14,7 @@ var y = charpos;
 var chary = parseInt(
   window.getComputedStyle(characterposition, null).getPropertyValue("bottom")
 );
+var chardiv = document.getElementById("dropdown");
 var scorediv = document.querySelector("#scorecard span");
 var score = 0;
 var count = 0;
@@ -101,6 +103,7 @@ function forwardmovement() {
     gamescreen.innerHTML =
       '<div id="won">You Won<button id="retrybtn" onclick="relod()">Play Again</button></div>';
     consolebtn.style.display = "none";
+    chardiv.style.display = "none";
     characterposition.style.display = "none";
     gamescreen.style.height = "100vh";
     clearInterval(le);
@@ -149,6 +152,7 @@ var le = setInterval(() => {
   );
   y = charpos;
   console.log(me, count);
+  roadleft.innerHTML = count - 5;
   if (me != 90) {
     carposition = document.querySelector("#ima" + me);
     carpos = parseInt(
@@ -161,6 +165,7 @@ var le = setInterval(() => {
       gamescreen.innerHTML =
         '<div id="won">Game Over<button id="retrybtn" onclick="relod()">Retry</button></div>';
       consolebtn.style.display = "none";
+      chardiv.style.display = "none";
       characterposition.style.display = "none";
       gamescreen.style.height = "100vh";
     }
@@ -182,7 +187,7 @@ function rightmovement() {
 function mycharacter() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
-window.onclick = function (event) {
+gamescreen.onclick = function (event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
@@ -198,7 +203,6 @@ var char = ["char1.png", "char2.png"];
 
 var charelement = document.getElementById("char");
 function mychoice(choice) {
-  charelement.src = '"../Images/' + char[choice] + '"';
-
-  // charelement.setAttribute("src", '"../Images/' + char[choice] + '"');
+  charelement.setAttribute("src", "../Images/" + char[choice]);
+  document.getElementById("myDropdown").classList.toggle("show");
 }
