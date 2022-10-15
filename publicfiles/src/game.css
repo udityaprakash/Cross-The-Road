@@ -146,9 +146,9 @@ body {
 #dropdown {
   border: none;
   cursor: pointer;
-  bottom: 600px;
+  bottom: 620px;
   left: 1200px;
-  position: absolute;
+  position: relative;
 }
 .dropbtn {
   background-color: rgba(135, 157, 146, 0.559);
@@ -160,7 +160,6 @@ body {
   border: none;
   cursor: pointer;
   font-family: "Courier New", Courier, monospace;
-  position: relative;
 }
 .dropbtn:hover,
 .dropbtn:focus {
@@ -169,17 +168,20 @@ body {
 }
 
 .dropdown-content {
-  position: absolute;
   background-color: #1d313e54;
+  position: absolute;
 }
 .dropdown-content a {
   color: aliceblue;
   padding: 12px 16px;
   text-decoration: none;
+  font-size: 17px;
+  font-weight: 650;
   display: block;
 }
 .dropdown-content a:hover {
   background-color: #1d313e54;
+  color: aliceblue;
 }
 .show {
   display: block;

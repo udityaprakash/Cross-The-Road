@@ -3,7 +3,8 @@ var consolebtn = document.getElementById("console");
 var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
-
+var roadleft = document.querySelector("#progress-bar span");
+var progress = 50;
 var maxwidth = window.innerWidth;
 var characterposition = document.getElementById("character");
 var charpos = parseInt(
@@ -149,6 +150,7 @@ var le = setInterval(() => {
   );
   y = charpos;
   console.log(me, count);
+  roadleft.innerHTML = count - 5;
   if (me != 90) {
     carposition = document.querySelector("#ima" + me);
     carpos = parseInt(
@@ -198,7 +200,7 @@ var char = ["char1.png", "char2.png"];
 
 var charelement = document.getElementById("char");
 function mychoice(choice) {
-  charelement.src = '"../Images/' + char[choice] + '"';
+  charelement.setAttribute("src", "../Images/" + char[choice]);
 
   // charelement.setAttribute("src", '"../Images/' + char[choice] + '"');
 }
