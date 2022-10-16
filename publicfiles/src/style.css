@@ -76,6 +76,7 @@ a{
   font-size: 3rem;
   color: #f0fff0;
   padding: 1rem;
+  cursor: pointer;
   text-decoration: none;
   box-shadow: 2px 5px 4px rgb(123, 142, 123),-2px 5px 4px rgb(123, 123, 123);
   border-radius: 16% 0% 16% 0% / 100% 0% 100% 0% ;
