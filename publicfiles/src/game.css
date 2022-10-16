@@ -98,6 +98,7 @@ body {
 }
 #scorecard {
   height: 2rem;
+  color: antiquewhite;
   min-width: max-content;
   position: absolute;
   border-radius: 10px;
@@ -164,13 +165,13 @@ body {
 #dropdown {
   border: none;
   cursor: pointer;
-  bottom: 620px;
-  left: 1200px;
-  position: relative;
+  top:23px;
+  right: 20px;
+  position:absolute;
 }
 .dropbtn {
   background-color: rgba(135, 157, 146, 0.559);
-  color: rgb(16, 15, 15);
+  color:antiquewhite;
   padding: 14px 10px;
   border-radius: 20px;
   display: block;

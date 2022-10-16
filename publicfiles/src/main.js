@@ -4,7 +4,6 @@ var crash = new Audio("../sounds/accident.mp3");
 var begin = new Audio("../sounds/beginning.mp3");
 var win = new Audio("../sounds/winning.mp3");
 var roadleft = document.querySelector("#progress-bar span");
-var progress = 50;
 var maxwidth = window.innerWidth;
 var characterposition = document.getElementById("character");
 var charpos = parseInt(
@@ -143,7 +142,7 @@ function relod() {
 var le = setInterval(()=>{
   charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
   y=charpos;
-  console.log(me , count);
+  roadleft.innerHTML=(count-5);
   if(me!=90){
     carposition = document.querySelector("#ima"+me);
     carpos = parseInt(window.getComputedStyle(carposition,null).getPropertyValue('left'));
@@ -172,7 +171,6 @@ function rightmovement(){
     characterposition.style.left=y+"px";   
   }
 }
-// --------------Dropdown-------------------
 function mycharacter() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -188,8 +186,7 @@ gamescreen.onclick = function (event) {
     }
   }
 };
-var char = ["char1.png", "char2.png"];
-
+var char = ["char1.png", "char2.png","man1.png","man2.png"];
 var charelement = document.getElementById("char");
 function mychoice(choice) {
   charelement.setAttribute("src", "../Images/" + char[choice]);
