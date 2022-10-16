@@ -10,9 +10,9 @@
   color: white;
   transition: all 0.5s ease-in-out;
 }
-#won{
+#won {
   position: relative;
-  top:50vh;
+  top: 50vh;
   display: flex;
   font-size: 3rem;
   justify-content: center;
@@ -62,15 +62,15 @@ body {
   align-items: center;
   justify-content: center;
 }
-@keyframes movement{
-    0%{
-        left: 118vw;
-    }
-    100%{
-        left:-10vw;
-    }
+@keyframes movement {
+  0% {
+    left: 118vw;
+  }
+  100% {
+    left: -10vw;
+  }
 }
-#retrybtn{
+#retrybtn {
   margin-left: 5vw;
   height: 70px;
   width: 150px;
@@ -81,51 +81,128 @@ body {
   color: rgb(0, 132, 255);
   cursor: pointer;
   font-size: 2rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-#retrybtn:hover{
+#retrybtn:hover {
   background-color: rgba(173, 173, 173, 0.95);
-  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.7)  ;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.7);
 }
-#character{
+#character {
   display: block;
   position: absolute;
   bottom:60px;
   left: 45vw;
 }
-#character img{
+#character img {
   height: 90px;
 }
-#scorecard{
+#scorecard {
   height: 2rem;
   min-width: max-content;
   position: absolute;
   border-radius: 10px;
   top: 0;
+  margin: 20px;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgba(135, 157, 146, 0.559);
+}
+#progress-bar {
+  height: 2rem;
+  min-width: max-content;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 200px;
   color: antiquewhite;
   margin: 20px;
   padding: 0.5rem 1rem;
   font-weight: 800;
   font-size: 1.5rem;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: rgba(45, 45, 45, 0.829);
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgba(135, 157, 146, 0.559);
 }
-@media (max-width:500px) {
-  #console{
+@media (max-width: 500px) {
+  #console {
     height: 0px;
   }
   #console button {
     height: 15vh;
     border-radius: 10px;
-    border:0px;
+    border: 0px;
   }
-  @keyframes movement{
-    0%{
-        left: 110vw;
+  @keyframes movement {
+    0% {
+      left: 110vw;
     }
-    100%{
-        left:-50vw;
+    100% {
+      left: -50vw;
     }
+  }
 }
+.dropbtn {
+  background-color: rgba(135, 157, 146, 0.559);
+  color: rgb(14, 13, 13);
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+  font-size: 1.5rem;
+  /* border-radius: 10px; */
+}
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #13232ea2;
+  color: rgb(237, 234, 234);
+}
+#dropdown {
+  border: none;
+  cursor: pointer;
+  bottom: 620px;
+  left: 1200px;
+  position: relative;
+}
+.dropbtn {
+  background-color: rgba(135, 157, 146, 0.559);
+  color: rgb(16, 15, 15);
+  padding: 14px 10px;
+  border-radius: 20px;
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+}
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #1d313e54;
+  color: aliceblue;
+}
+
+.dropdown-content {
+  background-color: #1d313e54;
+  position: absolute;
+  display: none;
+}
+.dropdown-content a {
+  color: aliceblue;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 650;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #1d313e54;
+  color: aliceblue;
+}
+.show {
+  display: block;
 }

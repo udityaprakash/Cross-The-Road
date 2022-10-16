@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cross The Road</title>
-    <link rel="icon" type="image/png" href="../Images/pageicon.png">
+    <link rel="icon" type="image/png" href="../Images/pageicon.png" />
     <link rel="stylesheet" href="./game.css" />
   </head>
   <body onload="welcome()">
-    <div>
+    <div id="screen">
       <div id="gamingscreen"></div>
       <div id="console">
         <button onclick="leftmovement()">Left</button>
@@ -17,9 +17,22 @@
         <button onclick="Backwardmovement()">Backward</button>
         <button onclick="rightmovement()">Right</button>
       </div>
-      <div id="character"><img src="../Images/char1.png" alt="charcter"></div>
+      <div id="character">
+        <img src="../Images/char1.png" alt="charcter" id="char" />
+      </div>
     </div>
     <div id="scorecard">Score:<span> 0</span></div>
+    <div id="progress-bar"><span>50 </span>&nbsp; Roads to win</div>
+
+    <div id="dropdown">
+      <button onclick="mycharacter()" class="dropbtn">
+        Choose your character
+      </button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#" onclick="mychoice(0)">Zack</a>
+        <a href="#" onclick="mychoice(1)">Wheezie</a>
+      </div>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>
