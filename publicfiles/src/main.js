@@ -90,13 +90,11 @@ for (let i = 0; i < 55; i++) {
 }
 gamescreen.scrollTop = gamescreen.scrollHeight;
 function forwardmovement() {
-  chary = parseInt(
-    window.getComputedStyle(characterposition, null).getPropertyValue("bottom")
-  );
-  if (chary >= 260) {
-    gamescreen.scrollTop -= 100;
-  } else {
-    characterposition.style.bottom = chary + 100 + "px";
+  chary = parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('bottom'));
+  if(chary>=260){
+  gamescreen.scrollTop -= 100;
+  }else{
+    characterposition.style.bottom=(chary+100)+"px";
   }
   if (score >= 495) {
     win.play();
@@ -120,20 +118,16 @@ function forwardmovement() {
   }
 }
 function Backwardmovement() {
-  if (score != 0) {
-    if (score <= 10) {
-      chary = parseInt(
-        window
-          .getComputedStyle(characterposition, null)
-          .getPropertyValue("bottom")
-      );
-      characterposition.style.bottom = chary - 100 + "px";
-    } else {
-      gamescreen.scrollTop += 100;
+  if (score != 0){ 
+    if(score<=10){
+      chary = parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('bottom'));
+      characterposition.style.bottom=(chary-100)+"px";
+    }else{
+    gamescreen.scrollTop += 100;
     }
-    score -= 5;
-    scorediv.innerHTML = " " + score + "";
-    if (flipdiv) {
+    score-=5;
+    scorediv.innerHTML=" " +score+"";
+    if(flipdiv){
       count++;
       me = count;
       flipdiv = false;
@@ -146,18 +140,13 @@ function Backwardmovement() {
 function relod() {
   window.location.reload();
 }
-var le = setInterval(() => {
-  charpos = parseInt(
-    window.getComputedStyle(characterposition, null).getPropertyValue("left")
-  );
-  y = charpos;
-  console.log(me, count);
-  roadleft.innerHTML = count - 5;
-  if (me != 90) {
-    carposition = document.querySelector("#ima" + me);
-    carpos = parseInt(
-      window.getComputedStyle(carposition, null).getPropertyValue("left")
-    );
+var le = setInterval(()=>{
+  charpos=parseInt(window.getComputedStyle(characterposition,null).getPropertyValue('left'));
+  y=charpos;
+  console.log(me , count);
+  if(me!=90){
+    carposition = document.querySelector("#ima"+me);
+    carpos = parseInt(window.getComputedStyle(carposition,null).getPropertyValue('left'));
     let gap = carpos - charpos;
     if (gap < 70 && gap > -150) {
       clearInterval(le);
@@ -177,10 +166,10 @@ function leftmovement() {
     characterposition.style.left = y + "px";
   }
 }
-function rightmovement() {
-  if (charpos > 30 && charpos < maxwidth - 120) {
-    y = y + 10;
-    characterposition.style.left = y + "px";
+function rightmovement(){
+  if(charpos>30 && charpos< (maxwidth-120)){
+    y=y+10;
+    characterposition.style.left=y+"px";   
   }
 }
 // --------------Dropdown-------------------
